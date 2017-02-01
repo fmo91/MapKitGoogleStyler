@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import MapKit
+import MapKitGoogleStyler
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        guard let jsonURL = Bundle.main.url(forResource: "MapStyle", withExtension: "json") else {
+            print("Invalid json url")
+            return
+        }
+        
+        do {
+            try mapView.customize(withJSONFileURL: jsonURL)
+        } catch let error {
+            print("Error! \(error)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
