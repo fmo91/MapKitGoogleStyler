@@ -1,0 +1,16 @@
+PODS:
+  - MapKitGoogleStyler (0.1.0)
+
+DEPENDENCIES:
+  - MapKitGoogleStyler (from `../`)
+
+EXTERNAL SOURCES:
+  MapKitGoogleStyler:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MapKitGoogleStyler: c8afc8ccc9b083930893e9ca35005037e7b3646f
+
+PODFILE CHECKSUM: 230600cafc1625b82e9d45f8927626bdb69a823a
+
+COCOAPODS: 1.1.1

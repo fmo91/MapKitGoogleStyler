@@ -1,0 +1,6 @@
+framework module MapKitGoogleStyler {
+  umbrella header "MapKitGoogleStyler-umbrella.h"
+
+  export *
+  module * { export * }
+}
