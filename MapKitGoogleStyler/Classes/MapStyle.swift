@@ -34,6 +34,7 @@ internal struct MapStyle {
         
         url = url
             .replacingOccurrences(of: ":", with: "%3A")
+            .replacingOccurrences(of: ",", with: "%2C")
         
         return "\(baseURL)\(url)"
     }
