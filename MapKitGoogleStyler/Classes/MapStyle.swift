@@ -21,7 +21,6 @@ internal struct MapStyle {
     
     internal var urlString: String {
         var url = ""
-        url = baseURL
         if googleStyles.isEmpty == false {
             url += prefix
             for (index, style) in googleStyles.enumerated() {
@@ -31,6 +30,11 @@ internal struct MapStyle {
                 }
             }
         }
-        return url
+        url = url.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        
+        url = url
+            .replacingOccurrences(of: ":", with: "%3A")
+        
+        return "\(baseURL)\(url)"
     }
 }

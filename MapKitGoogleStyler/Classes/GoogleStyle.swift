@@ -49,10 +49,7 @@ public struct GoogleStyle {
             }
             style.append("s.e:")
             style.append(elementType.convertedValue)
-        } else {
-            style.append("s.e:")
-            style.append("undefined")
-        }
+        } 
         if let stylers = self.stylers {
             for styler in stylers {
                 for (key, value) in styler {

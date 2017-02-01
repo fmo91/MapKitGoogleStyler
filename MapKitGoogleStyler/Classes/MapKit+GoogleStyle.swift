@@ -24,14 +24,8 @@ private extension String {
 public extension MKMapView {
     open func customize(with jsonArray: [[String: Any]]) {
         let mapStyle = MapStyle(json: jsonArray)
-        let urlBaseTemplate = mapStyle.urlString.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         
-        let urlTemplate = urlBaseTemplate
-            .replacingOccurrences(of: "%7B", with: "{")
-            .replacingOccurrences(of: "%7D", with: "}")
-            .replacingOccurrences(of: ":", with: "%3A")
-        
-        let overlay = MKTileOverlay(urlTemplate: urlTemplate)
+        let overlay = MKTileOverlay(urlTemplate: mapStyle.urlString)
         overlay.canReplaceMapContent = true
         self.add(overlay)
     }
