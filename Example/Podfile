@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MapKitGoogleStyler_Example' do
+  pod 'MapKitGoogleStyler', :path => '../'
+
+  target 'MapKitGoogleStyler_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
