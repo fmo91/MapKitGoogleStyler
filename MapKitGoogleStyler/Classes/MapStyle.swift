@@ -10,7 +10,7 @@ import Foundation
 
 internal struct MapStyle {
     
-    private let baseURL = "http://mts0.google.com/vt/lyrs=m@289000001&hl=en&src=app&x={x}&y={y}&z={z}&s=DGal"
+    private let baseURL = "https://mts0.google.com/vt/lyrs=m@289000001&hl=en&src=app&x={x}&y={y}&z={z}&s=DGal"
     private let prefix = "&apistyle="
     
     internal var googleStyles = [GoogleStyle]()
