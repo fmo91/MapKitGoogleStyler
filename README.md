@@ -64,7 +64,7 @@ extension ViewController: MKMapViewDelegate {
         if let tileOverlay = overlay as? MKTileOverlay {
             return MKTileOverlayRenderer(tileOverlay: tileOverlay)
         } else {
-            return MKTileOverlayRenderer(overlay: overlay)
+            return MKOverlayRenderer(overlay: overlay)
         }
     }
 }
