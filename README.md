@@ -72,6 +72,9 @@ extension ViewController: MKMapViewDelegate {
 
 ## Requirements
 
+* Swift 3
+* MapKit, of course
+
 ## Installation
 
 MapKitGoogleStyler is available through [CocoaPods](http://cocoapods.org). To install
