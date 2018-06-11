@@ -44,7 +44,7 @@ public struct GoogleStyle {
             style.append("undefined")
         }
         if let elementType = self.elementType {
-            if style.characters.last != "|" && style.characters.last != "," {
+            if style.last != "|" && style.last != "," {
                 style.append("|")
             }
             style.append("s.e:")
@@ -54,14 +54,14 @@ public struct GoogleStyle {
             for styler in stylers {
                 for (key, value) in styler {
                     if let stylerType = StylerType(rawValue: key) {
-                        if style.characters.last != "|" && style.characters.last != "," {
+                        if style.last != "|" && style.last != "," {
                             style.append("|")
                         }
                         if key == "color" {
                             if let color = value as? String {
-                                if color.characters.count == 7 {
+                                if color.count == 7 {
                                     style.append("\(stylerType.convertedValue):#ff\(color.replacingOccurrences(of: "#", with: ""))")
-                                } else if color.characters.count != 9 {
+                                } else if color.count != 9 {
                                     print("Malformed color")
                                 } else {
                                     style.append("\(stylerType.convertedValue):\(value)")
