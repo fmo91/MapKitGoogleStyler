@@ -14,7 +14,7 @@ public enum MapKitGoogleStylerError: Error {
 }
 
 public struct MapKitGoogleStyler {
-    public static func buildOverlay(with jsonArray: [[String: Any]], and langCode: String? = nil) -> MKTileOverlay {
+    public static func buildOverlay(with jsonArray: [[String: Any]], langCode: String? = nil) -> MKTileOverlay {
         var mapStyle = MapStyle(json: jsonArray)
         if let langCodeSet = langCode {
             mapStyle.langCode = langCodeSet   
@@ -24,11 +24,11 @@ public struct MapKitGoogleStyler {
         return overlay
     }
      
-    public static func buildOverlay(with jsonFileURL: URL, and langCode: String? = nil) throws -> MKTileOverlay {
+    public static func buildOverlay(with jsonFileURL: URL, langCode: String? = nil) throws -> MKTileOverlay {
         let data = try Data(contentsOf: jsonFileURL)
         let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
         if let array = object as? [[String: Any]] {
-            return MapKitGoogleStyler.buildOverlay(with: array, and: langCode)
+            return MapKitGoogleStyler.buildOverlay(with: array, langCode: langCode)
         } else {
             throw MapKitGoogleStylerError.invalidJSONFormat
         }
