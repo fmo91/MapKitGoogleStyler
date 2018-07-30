@@ -15,7 +15,7 @@ public enum MapKitGoogleStylerError: Error {
 
 public struct MapKitGoogleStyler {
     public static func buildOverlay(with jsonArray: [[String: Any]], and langCode: String? = nil) -> MKTileOverlay {
-        let mapStyle = MapStyle(json: jsonArray)
+        var mapStyle = MapStyle(json: jsonArray)
         if let langCodeSet = langCode {
             mapStyle.langCode = langCodeSet   
         }
