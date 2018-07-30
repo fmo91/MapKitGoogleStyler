@@ -31,13 +31,15 @@ internal struct MapStyle {
                 }
             }
         }
+        
         url = url.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         
         url = url
             .replacingOccurrences(of: ":", with: "%3A")
             .replacingOccurrences(of: ",", with: "%2C")
-            .replacingOccurrences(of: "{lang}", with: langCode)
         
-        return "\(baseURL)\(url)"
+        var urlPrefix = baseURL.replacingOccurrences(of: "{lang}", with: langCode)
+
+        return "\(urlPrefix)\(url)"
     }
 }
