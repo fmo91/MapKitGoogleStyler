@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MapKitGoogleStyler'
-  s.version          = '0.1.1'
+  s.version          = '0.2'
   s.summary          = 'Google Map JSON styles in MapKit.'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ Blog post here: https://medium.com/@ortizfernandomartin/customize-mapkits-mkmapv
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'MapKitGoogleStyler/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'MapKitGoogleStyler' => ['MapKitGoogleStyler/Assets/*.png']
   # }
