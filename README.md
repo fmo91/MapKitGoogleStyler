@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         }
         
         // And finally add it to your MKMapView
-        mapView.add(tileOverlay)
+        mapView.addOverlay(tileOverlay)
     }
     
 }
